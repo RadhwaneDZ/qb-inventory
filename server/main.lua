@@ -1553,7 +1553,7 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					TriggerClientEvent('QBCore:Notify', source, "You Have Given " ..GetPlayerName(tonumber(args[1])).." "..amount.." "..itemData["name"].. "", "success")
 						
 						
-		TriggerEvent("qb-log:server:CreateLog", "admin", "New Item Drop", "red", "**".. GetPlayerName(source) .. "** (citizenid: *"..Player.PlayerData.citizenid.."* | id: *"..source.."*) dropped new item; name: **"..itemData.name.."**, amount: **" .. itemAmount .. "**")
+		TriggerEvent("qb-log:server:CreateLog", "admin", "admin give item", "red", "**".. source .. "** give item to (citizenid: *"..Player.PlayerData.citizenid.."* | 					TriggerClientEvent('QBCore:Notify', source, "You Have Given " ..GetPlayerName(tonumber(args[1])).." "..amount.." "..itemData["name"].. " ")
 						
 						
 						
