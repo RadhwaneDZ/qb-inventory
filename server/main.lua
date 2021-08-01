@@ -1551,6 +1551,15 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 
 				if Player.Functions.AddItem(itemData["name"], amount, false, info) then
 					TriggerClientEvent('QBCore:Notify', source, "You Have Given " ..GetPlayerName(tonumber(args[1])).." "..amount.." "..itemData["name"].. "", "success")
+						
+						
+		TriggerEvent("qb-log:server:CreateLog", "admin", "admin give item", "red", "**".. source .. "** give item to (citizenid: *"..Player.PlayerData.citizenid.."* | 					TriggerClientEvent('QBCore:Notify', source, "You Have Given " ..GetPlayerName(tonumber(args[1])).." "..amount.." "..itemData["name"].. " ")
+						
+						
+						
+						
+						
+						
 				else
 					TriggerClientEvent('QBCore:Notify', source,  "Can't give item!", "error")
 				end
