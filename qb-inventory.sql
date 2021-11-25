@@ -1,59 +1,26 @@
 CREATE TABLE IF NOT EXISTS `gloveboxitems` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `plate` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `amount` int(11) DEFAULT NULL,
-  `info` text DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `slot` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
-CREATE TABLE IF NOT EXISTS `gloveboxitemsnew` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plate` varchar(255) DEFAULT NULL,
   `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `plate` (`plate`)
-) ENGINE=InnoDB AUTO_INCREMENT=1551 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`plate`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `stashitems` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stash` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `amount` int(11) NOT NULL,
-  `info` text NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `slot` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15024 DEFAULT CHARSET=latin1;
-
-CREATE TABLE IF NOT EXISTS `stashitemsnew` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stash` varchar(255) NOT NULL,
+  `stash` varchar(255) DEFAULT NULL,
   `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `stash` (`stash`)
-) ENGINE=InnoDB AUTO_INCREMENT=2109 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`stash`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `trunkitems` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plate` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `amount` int(11) NOT NULL,
-  `info` text NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `slot` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=633 DEFAULT CHARSET=latin1;
-
-CREATE TABLE IF NOT EXISTS `trunkitemsnew` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `plate` varchar(255) NOT NULL,
+  `plate` varchar(255) DEFAULT NULL,
   `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `plate` (`plate`)
-) ENGINE=InnoDB AUTO_INCREMENT=1127 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`plate`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `player_vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -72,8 +39,12 @@ CREATE TABLE IF NOT EXISTS `player_vehicles` (
   `depotprice` int(11) NOT NULL DEFAULT 0,
   `drivingdistance` int(50) DEFAULT NULL,
   `status` text DEFAULT NULL,
+  `balance` int(11) NOT NULL DEFAULT 0,
+  `paymentamount` int(11) NOT NULL DEFAULT 0,
+  `paymentsleft` int(11) NOT NULL DEFAULT 0,
+  `financetime` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `plate` (`plate`),
   KEY `citizenid` (`citizenid`),
   KEY `license` (`license`)
-) ENGINE=InnoDB AUTO_INCREMENT=2432 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1;

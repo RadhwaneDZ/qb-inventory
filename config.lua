@@ -1,28 +1,5 @@
 Config = {}
 
-local StringCharset = {}
-local NumberCharset = {}
-
-for i = 48,  57 do table.insert(NumberCharset, string.char(i)) end
-for i = 65,  90 do table.insert(StringCharset, string.char(i)) end
-for i = 97, 122 do table.insert(StringCharset, string.char(i)) end
-
-Config.RandomStr = function(length)
-	if length > 0 then
-		return Config.RandomStr(length-1) .. StringCharset[math.random(1, #StringCharset)]
-	else
-		return ''
-	end
-end
-
-Config.RandomInt = function(length)
-	if length > 0 then
-		return Config.RandomInt(length-1) .. NumberCharset[math.random(1, #NumberCharset)]
-	else
-		return ''
-	end
-end
-
 Config.VendingObjects = {
     "prop_vend_soda_01",
     "prop_vend_soda_02",
@@ -224,7 +201,7 @@ Config.CraftingItems = {
 }
 
 Config.AttachmentCrafting = {
-    ["location"] = {x = 88.91, y = 3743.88, z = 40.77, h = 66.5, r = 1.0}, 
+    ['location'] = vector3(88.91, 3743.88, 40.77), 
     ["items"] = {
         [1] = {
             name = "pistol_extendedclip",
@@ -255,7 +232,7 @@ Config.AttachmentCrafting = {
             points = 2,
         },
         [3] = {
-            name = "rifle_extendedclip",
+            name = "assaultrifle_extendedclip",
             amount = 50,
             info = {},
             costs = {
@@ -265,12 +242,12 @@ Config.AttachmentCrafting = {
                 ["smg_extendedclip"] = 1,
             },
             type = "item",
-            slot = 7,
+            slot = 3,
             threshold = 25,
             points = 8,
         },
         [4] = {
-            name = "rifle_drummag",
+            name = "assaultrifle_drum",
             amount = 50,
             info = {},
             costs = {
@@ -280,12 +257,12 @@ Config.AttachmentCrafting = {
                 ["smg_extendedclip"] = 2,
             },
             type = "item",
-            slot = 8,
+            slot = 4,
             threshold = 50,
             points = 8,
         },
         [5] = {
-            name = "smg_flashlight",
+            name = "smg_drum",
             amount = 50,
             info = {},
             costs = {
@@ -294,7 +271,7 @@ Config.AttachmentCrafting = {
                 ["rubber"] = 130,
             },
             type = "item",
-            slot = 3,
+            slot = 5,
             threshold = 75,
             points = 3,
         },
@@ -308,12 +285,12 @@ Config.AttachmentCrafting = {
                 ["rubber"] = 145,
             },
             type = "item",
-            slot = 4,
+            slot = 6,
             threshold = 100,
             points = 4,
         },
         [7] = {
-            name = "smg_suppressor",
+            name = "microsmg_extendedclip",
             amount = 50,
             info = {},
             costs = {
@@ -322,7 +299,7 @@ Config.AttachmentCrafting = {
                 ["rubber"] = 155,
             },
             type = "item",
-            slot = 5,
+            slot = 7,
             threshold = 150,
             points = 5,
         },
@@ -336,7 +313,7 @@ Config.AttachmentCrafting = {
                 ["rubber"] = 170,
             },
             type = "item",
-            slot = 6,
+            slot = 8,
             threshold = 200,
             points = 6,
         },

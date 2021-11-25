@@ -1,22 +1,39 @@
 # qb-inventory
 
+# License
+
+    QBCore Framework
+    Copyright (C) 2021 Joshua Eger
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
+
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [qb-logs](https://github.com/qbcore-framework/qb-logs) - For logging transfer and other history
 - [qb-traphouse](https://github.com/qbcore-framework/qb-traphouse) - Trap house system for qbcore
-- [rp-radio](https://github.com/qbcore-framework/rp-radio) - Radio system for communication
+- [qb-radio](https://github.com/qbcore-framework/qb-radio) - Radio system for communication
 - [qb-drugs](https://github.com/qbcore-framework/qb-drugs) -  Drugs and weeds system
 - [qb-shops](https://github.com/qbcore-framework/qb-shops) - Needed in order to add shops
 
 ## Screenshots
-![General](https://imgur.com/cQWrQ4L.png)
-![ID Card](https://imgur.com/YyLmgBN.png)
-![Weapon](https://imgur.com/4Egycg6.png)
-![Shop](https://imgur.com/kRgEMVk.png)
-![Vending Machine](https://imgur.com/lSwba9S.png)
-![Attachment Crafting](https://imgur.com/dEwa4pI.png)
-![Glovebox](https://imgur.com/IXaODb2.png)
-![Trunk](https://imgur.com/pLmK0iV.png)
+![General](https://i.imgur.com/GR0MDFN.png)
+![ID Card](https://i.imgur.com/C6gAOWi.png)
+![Weapon](https://i.imgur.com/RbCvHJb.png)
+![Shop](https://i.imgur.com/7Da7UEX.png)
+![Crafting](https://i.imgur.com/peONaL9.png)
+![Glovebox](https://i.imgur.com/LjDEYWa.png)
+![Trunk](https://i.imgur.com/IoGYZbv.png)
 
 ## Features
 - Item crafting
@@ -45,29 +62,6 @@ ensure qb-shops
 ## Configuration
 ```
 Config = {} -- Don't touch
-
-local StringCharset = {} -- Don't touch
-local NumberCharset = {} -- Don't touch
-
-for i = 48,  57 do table.insert(NumberCharset, string.char(i)) end -- Don't touch
-for i = 65,  90 do table.insert(StringCharset, string.char(i)) end -- Don't touch
-for i = 97, 122 do table.insert(StringCharset, string.char(i)) end -- Don't touch
-
-Config.RandomStr = function(length) -- Don't touch
-	if length > 0 then
-		return Config.RandomStr(length-1) .. StringCharset[math.random(1, #StringCharset)]
-	else
-		return ''
-	end
-end
-
-Config.RandomInt = function(length) -- Don't touch
-	if length > 0 then
-		return Config.RandomInt(length-1) .. NumberCharset[math.random(1, #NumberCharset)]
-	else
-		return ''
-	end
-end
 
 Config.VendingObjects = { -- Props which will be considered as vending machines
     "prop_vend_soda_01",
